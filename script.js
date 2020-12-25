@@ -1,16 +1,31 @@
-//Event Handling
-const close = document.querySelectorAll('.close');
+        //Event Handling
+        // const close = document.querySelectorAll('.close');
 
-    // for( let i = 0; i < close.length; i++){
-    //     close[i].addEventListener('click', function(e){
-    //         // close[i].parentElement.style.display = 'none';
-    //         e.target.parentElement.style.display = 'none';
-    //     });
-    // }
+        //     close.forEach(function(el){
+        //     el.addEventListener('click', function(e){
+        //         e.target.parentElement.style.display = 'none';
+        //         //Prevent Default : menghentikan aksi default 
+        //         e.preventDefault();
+        //         e.stopPropagation();
+        //     });
+        // });
+        
+        //tag span di class : close jadikan tag a href
 
-    //Membuat lebih ringkas lagi
-    close.forEach(function(el){
-    el.addEventListener('click', function(e){
-        e.target.parentElement.style.display = 'none';
-    });
-});
+        //Event Bubbling
+        // const cards = document.querySelectorAll('.card');
+        // cards.forEach(function(card){
+        //     card.addEventListener('click', function(){
+        //         alert('ok');
+        //     });
+        // });
+
+        //Event handling dan Event bubling di atas di comment dulu
+        //tag a di class : close, ganti lagi ke span
+        //Contoh 2 :Event Bubbling
+        const container = document.querySelector('.container');
+        container.addEventListener('click', function(e){
+            if(e.target.className == 'close'){
+                e.target.parentElement.style.display = "none";
+            }
+        });
